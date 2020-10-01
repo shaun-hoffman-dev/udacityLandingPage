@@ -18,29 +18,42 @@
  * 
 */
 
+const navList = document.getElementById('navbar__list');
+const headingList = document.getElementsByTagName('h2');
+const sectionList = document.getElementsByTagName('section');
 
 /**
  * End Global Variables
- * Start Helper Functions
- * 
-*/
 
-
-
-/**
- * End Helper Functions
  * Begin Main Functions
  * 
 */
 
 // build the nav
-
+for (let i = 0; i<headingList.length; i++){
+    let navTitle = headingList[i].textContent;
+    let navItem = document.createElement('li');
+    let parentElementId = headingList[i].parentElement.parentElement.id;
+    
+    navItem.classList.add("menu__link");
+    navItem.innerHTML = `${navTitle}`;
+    navItem.addEventListener('click',()=>
+        document.getElementById(parentElementId).scrollIntoView(
+        {behavior: 'smooth'}));
+    navList.appendChild(navItem);
+}
 
 // Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
+function checkActive(){
+    for (let i = 0; i<sectionList.length; i++){
+        let sectionTop = sectionList[i].getBoundingClientRect().top;
+        if (sectionTop <= 400 && sectionTop >= -400){
+            sectionList[i].classList.add('your-active-class');
+        } else {
+            sectionList[i].classList.remove('your-active-class');
+        }
+    }
+}
 
 /**
  * End Main Functions
@@ -48,10 +61,9 @@
  * 
 */
 
-// Build menu 
-
-// Scroll to section on link click
-
 // Set sections as active
-
+var handlerFired;
+window.addEventListener('scroll', function(e){
+    checkActive();
+  });
 

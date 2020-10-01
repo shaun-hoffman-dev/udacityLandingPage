@@ -75,7 +75,7 @@ section {
 }
 
 .navbar__menu .menu__link {
-    display: block;
+    /*display: block;*/
     padding: 1em;
     font-weight: bold;
     text-decoration: none;
@@ -90,7 +90,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: #ddd;
     position: fixed;
     top: 0;
     width: 100%;
@@ -193,7 +193,7 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+.your-active-class {
     background: rgb(0, 0, 0);
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
 }
@@ -208,6 +208,8 @@ section.your-active-class .landing__container::after {
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
 
+ 
+
 /* Section Active Styles Keyframe Animations */
 @keyframes rotate {
 	from {
@@ -221,3 +223,8 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+/* li {
+    background-color: black;
+    color: white;
+} */
