@@ -62,7 +62,6 @@ function checkActive(){
 */
 
 // Set sections as active
-var handlerFired;
 window.addEventListener('scroll', function(e){
     checkActive();
   });
